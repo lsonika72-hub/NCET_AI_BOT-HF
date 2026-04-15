@@ -3,14 +3,14 @@ from transformers import pipeline
 
 @st.cache_resource
 def load_summarizer():
-  return pipeline("summarization",model="ssheifer/distilbart-cnn-12-6")
+  return pipeline("summarization",model="sshleifer/distilbart-cnn-12-6")
 
 
 summarizer = load_summarizer()
 
 st.title("AI Text Summarizer")
 st.write("Entera long text below, and get a concise summary!")
-long_text=st.text_area("Enter text to summarize",height=200)
+long_text=st.text_area("Enter text to summarise:",height=200)
 
 max_length = st.slider("Max Summary Length", min_value=50,max_value=300, value=130)
 min_length = st.slider("Min Summary Length", min_value=20,max_value=100, value=30)
